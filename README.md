@@ -1,14 +1,31 @@
-# Welcome to your CDK TypeScript project
+# 植物水やり通知 LINE Bot
 
-This is a blank project for CDK development with TypeScript.
+水やりが必要な植物があれば公式 LINE から「アロエ < お水欲しいかも 🪴」のようなメッセージを送信する。
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+# 通知タイミング
 
-## Useful commands
+## アロエ
 
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
-* `npx cdk deploy`  deploy this stack to your default AWS account/region
-* `npx cdk diff`    compare deployed stack with current state
-* `npx cdk synth`   emits the synthesized CloudFormation template
+- 夏(7~9 月)
+  - 偶数日
+- 冬(12~3 月)
+  - 第 1、第 3 土曜日
+- それ以外
+  - 毎週土曜日
+
+## ガジュマル
+
+- 冬(12~3 月)
+  - 第 1、第 3 土曜日
+- それ以外
+  - 毎週土曜日
+
+# デプロイコマンド
+
+- `npm run build`
+- `cdk synth`
+- `cdk deploy`
+
+# 各種重要 URL
+
+- [LINE Official Manager](https://manager.line.biz/)
