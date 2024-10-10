@@ -58,7 +58,7 @@ export class WaterPlantsNotifierStack extends cdk.Stack {
       })
     );
 
-    // CloudWatch Events ルールの作成（毎朝8時に実行する）
+    // EventBridge ルールの作成（毎朝8時に実行する）
     const rule = new events.Rule(this, "WaterPlantsNotifierScheduleRule", {
       schedule: events.Schedule.cron({
         minute: "0",
