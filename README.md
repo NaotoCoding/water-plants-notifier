@@ -29,4 +29,3 @@
 # 各種重要 URL
 
 - [LINE Official Manager](https://manager.line.biz/)
-- [iCloud(aws ログイン情報)](https://www.icloud.com/iclouddrive/)
