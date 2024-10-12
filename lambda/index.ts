@@ -9,7 +9,7 @@ const getParamsFromSSM = async (paramName: string) => {
   return paramStore.Parameter?.Value;
 };
 
-export const handler = async (event: any) => {
+export const handler = async () => {
   const businessLineChannelAccessToken = await getParamsFromSSM(
     process.env.BUSINESS_LINE_CHANNEL_ACCESS_TOKEN_SSM_PARAMETER_NAME!
   );
