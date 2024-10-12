@@ -21,10 +21,14 @@ export const handler = async (event: any) => {
     channelAccessToken: businessLineChannelAccessToken!,
     channelSecret: businessLineChannelSecret!,
   };
+  // 日本時間を取得
+  const date = new Date(
+    Date.now() + (new Date().getTimezoneOffset() + 9 * 60) * 60 * 1000
+  );
   const messages: TextMessage[] = [
     {
       type: "text",
-      text: messageFromPlants(new Date()),
+      text: messageFromPlants(date),
     },
   ];
   const client = new messagingApi.MessagingApiClient(config);
