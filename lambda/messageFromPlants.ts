@@ -1,9 +1,9 @@
-const isTodaySaturday = (day: Date) => {
+const isSaturday = (day: Date) => {
   const dayOfWeek = day.getDay();
   return dayOfWeek === 6;
 };
 
-const isTodayFirstOrThirdSaturday = (day: Date) => {
+const isFirstOrThirdSaturday = (day: Date) => {
   const date = day.getDate();
   const dayOfWeek = day.getDay();
   const isFirstSaturday = date <= 7 && dayOfWeek === 6;
@@ -11,17 +11,17 @@ const isTodayFirstOrThirdSaturday = (day: Date) => {
   return isFirstSaturday || isThirdSaturday;
 };
 
-const isTodaySummer = (day: Date) => {
+const isSummer = (day: Date) => {
   const month = day.getMonth() + 1;
   return 7 <= month && month <= 9;
 };
 
-const isTodayWinter = (day: Date) => {
+const isWinter = (day: Date) => {
   const month = day.getMonth() + 1;
   return 12 <= month || month <= 3;
 };
 
-const isTodayEvenDay = (day: Date) => {
+const isEvenDay = (day: Date) => {
   const date = day.getDate();
   return date % 2 === 0;
 };
@@ -29,37 +29,37 @@ const isTodayEvenDay = (day: Date) => {
 const messageFromGajumaru = (day: Date) => {
   const text = "ガジュマル < お水欲しいかも🌱";
   // 冬季は第一土曜日と第三土曜日に送信、それ以外は土曜日に送信
-  if (isTodayWinter(day)) {
-    if (isTodayFirstOrThirdSaturday(day)) {
+  if (isWinter(day)) {
+    if (isFirstOrThirdSaturday(day)) {
       return text;
     } else {
       return "";
     }
   }
 
-  return isTodaySaturday(day) ? text : "";
+  return isSaturday(day) ? text : "";
 };
 
 const messageFromAloe = (day: Date) => {
   const text = "アロエ < お水欲しいかも🪴";
   // 夏季は偶数日に送信、冬季は第一土曜日と第三土曜日に送信、それ以外は土曜日に送信
-  if (isTodaySummer(day)) {
-    if (isTodayEvenDay(day)) {
+  if (isSummer(day)) {
+    if (isEvenDay(day)) {
       return text;
     } else {
       return "";
     }
   }
 
-  if (isTodayWinter(day)) {
-    if (isTodayFirstOrThirdSaturday(day)) {
+  if (isWinter(day)) {
+    if (isFirstOrThirdSaturday(day)) {
       return text;
     } else {
       return "";
     }
   }
 
-  return isTodaySaturday(day) ? text : "";
+  return isSaturday(day) ? text : "";
 };
 
 export const messageFromPlants = (day: Date) => {
