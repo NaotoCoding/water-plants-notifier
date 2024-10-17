@@ -1,30 +1,10 @@
-const isSaturday = (day: Date) => {
-  const dayOfWeek = day.getDay();
-  return dayOfWeek === 6;
-};
-
-const isFirstOrThirdSaturday = (day: Date) => {
-  const date = day.getDate();
-  const dayOfWeek = day.getDay();
-  const isFirstSaturday = date <= 7 && dayOfWeek === 6;
-  const isThirdSaturday = date >= 15 && date <= 21 && dayOfWeek === 6;
-  return isFirstSaturday || isThirdSaturday;
-};
-
-const isSummer = (day: Date) => {
-  const month = day.getMonth() + 1;
-  return 7 <= month && month <= 9;
-};
-
-const isWinter = (day: Date) => {
-  const month = day.getMonth() + 1;
-  return 12 <= month || month <= 3;
-};
-
-const isEvenDay = (day: Date) => {
-  const date = day.getDate();
-  return date % 2 === 0;
-};
+import {
+  isEvenDay,
+  isFirstOrThirdSaturday,
+  isSaturday,
+  isSummer,
+  isWinter,
+} from "./timeUtil";
 
 const messageFromGajumaru = (day: Date) => {
   const text = "ガジュマル < お水欲しいかも🌱";
